@@ -6,4 +6,8 @@ load_dotenv()
 
 
 class TG_BOT_SETTINGS(BaseSettings):
-	tg_api: SecretStr = os.getenv('TOKEN_TG', None)
+    tg_api: SecretStr = os.getenv("TOKEN_TG", None)
+
+
+class SiteApiKey(BaseSettings):
+    site_api: SecretStr = os.getenv("API_key", None)

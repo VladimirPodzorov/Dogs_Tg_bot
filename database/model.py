@@ -1,7 +1,7 @@
 from datetime import datetime
 from peewee import *
 
-db = SqliteDatabase('history.db')
+db = SqliteDatabase("history.db")
 
 
 class History(Model):
