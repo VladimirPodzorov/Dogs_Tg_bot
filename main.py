@@ -1,20 +1,4 @@
-import telebot
-from Settings import TG_BOT_SETTINGS
+from tgAPI.tg_bot import bot
 
-
-token = TG_BOT_SETTINGS()
-bot = telebot.TeleBot(token.tg_api.get_secret_value())
-
-
-@bot.message_handler(commands=['hello-world'])
-def hello(message):
-	bot.send_message(message.chat.id, 'Здравствуйте')
-
-
-@bot.message_handler(content_types=['text'])
-def answer(message):
-	if message.text.lower() == 'привет':
-		bot.send_message(message.chat.id, 'Привет - привет!')
-
-
-bot.polling()
+if __name__ == '__main__':
+	bot.polling()
